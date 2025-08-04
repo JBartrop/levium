@@ -1,0 +1,113 @@
+"use client"
+import React, { ReactNode, useState } from "react";
+import { Link, useLocation, useNavigation } from "react-router-dom";
+
+interface NavbarProps{
+    id: number;
+    name: string;
+    icon?: ReactNode;
+    link: string;
+    onClick?: () => void;
+}
+
+const menuItems: NavbarProps[] = [
+    {
+        id: 1,
+        name: "Home",
+        link: "/"
+    },
+    {
+        id: 2,
+        name: "About Us",
+        link: "/about"
+    },
+    {
+        id: 3,
+        name: "Our Projects",
+        link: "/about"
+    },
+    {
+        id: 4,
+        name: "Work Process",
+        link: "/workprocess"
+    },
+    {
+        id: 5,
+        name: "Contact",
+        link: "/contact"
+    },
+]
+
+
+const Navbar: React.FC = () => {
+
+    const location = useLocation();
+    const currentpathname = location.pathname
+    console.log(currentpathname)
+
+    const [open, isOpen] = useState(false);
+
+    const toggleopen = () => {
+        isOpen(!open)
+    }
+
+    return (
+        <section>
+            <header>
+                <nav className="fixed bg-[#444444] p-5 rounded-lg shadow-md shadow-gray-900 text-[#b0b0b0] top-10 left-1/2 transform -translate-x-1/2 w-11/12 h-[70px] z-[100] duration-300">
+                    {/* desktop */}
+                    <div className="max-w-[1570px] mx-auto lg:flex hidden justify-between items-center ">
+                        <div className="icon">
+                            <p className="text-xl">Levium</p>
+                        </div>
+                        <div>
+                            <ul className="flex items-center">
+                                {menuItems.map((item, index) => {
+                                    const isActive = currentpathname === item.link;
+                                    return(
+                                        <li key={item.id} className={`ml-5 duration-300 hover:text-gray-300 ${isActive  ? " text-gray-200 font-bold" : "text-background-700"}`}>
+                                            <Link to={item.link}>
+                                                {item.name}
+                                            </Link>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    {/* mobile */}
+                    <div className=" mx-auto lg:hidden flex justify-between relative items-center "> 
+                        <div className="icon">
+                            <p className="text-xl">Levium</p>
+                        </div>
+                        <button onClick={toggleopen}  className="hamburger relative inline-flex justify-center items-center  outline-offset-2 h-6 w-8 text-[#9d978b]">
+                            <span className={`menu ${open ? "open" : ""}`}></span>
+                            <span className={`menu ${open ? "open" : ""}`}></span>
+                            <span className={`menu ${open ? "open" : ""}`}></span>
+                        </button>
+                        
+                    </div>
+
+
+                </nav>
+                <div className={`mobileMenu ${open ? "menu-open" : ""}`}>
+                    <ul className="">
+                        {menuItems.map((item, index) => {
+                            const isActive = currentpathname === item.link;
+                            return(
+                                <li key={item.id} className={`m-5 text-left hover:text-gray-300 duration-300 ${isActive  ? " text-gray-200 font-bold" : "text-background-700"}`}>
+                                    <Link to={item.link}>
+                                        {item.name}
+                                    </Link>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+            </header>
+        </section>
+    )
+}
+
+export default Navbar;

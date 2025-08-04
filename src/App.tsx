@@ -1,13 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
+import Navbar from './components/navbar';
+import Levium from './levium';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Levium />
+    
+  },
+])
+
+
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <div className="bg-black text-blue-300 p-10  text-3xl">
-        hello world
-      </div>
+      <RouterProvider router={router} />
+      <ToastContainer autoClose={200} closeButton={true} hideProgressBar={true} position="top-center"  />
     </div>
   );
 }
