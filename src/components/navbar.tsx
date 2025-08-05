@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
     return (
         <section>
             <header>
-                <nav className="fixed bg-[#444444] p-5 rounded-lg shadow-md shadow-gray-900 text-[#b0b0b0] top-10 left-1/2 transform -translate-x-1/2 w-11/12 h-[70px] z-[100] duration-300">
+                <nav className="fixed bg-[#444444] bg-opacity-80 p-5 rounded-lg shadow-md shadow-gray-900 text-[#b0b0b0] top-8 left-1/2 transform -translate-x-1/2 w-11/12 h-[70px] z-[100] duration-300">
                     {/* desktop */}
                     <div className="max-w-[1570px] mx-auto lg:flex hidden justify-between items-center ">
                         <div className="icon">

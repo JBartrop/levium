@@ -5,13 +5,18 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Navbar from './components/navbar';
 import Levium from './levium';
+import Error from './pages/error';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Levium />
-    
+    element: <Levium />,
+    errorElement: <Error />  
   },
+  {
+    path: "*",
+    element: <Error />,
+  }
 ])
 
 
