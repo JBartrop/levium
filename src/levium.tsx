@@ -5,6 +5,7 @@ import Hero from "./components/hero";
 import About from "./components/about";
 import Gallery from "./components/gallery";
 import Work from "./components/work";
+import Testimonials from "./components/testimonial";
 
 
 
@@ -19,6 +20,7 @@ const Levium: React.FC = () => {
             <About />
             <Gallery />
             <Work />
+            <Testimonials />
         </section>
     )
 }
