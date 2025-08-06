@@ -38,7 +38,7 @@ code {
 
 .menu-open {
   opacity: 1;
-  width: 50%;
+  width: 60%;
   visibility: visible;
   transform: translateX(0);
 }

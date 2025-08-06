@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
     return (
         <section>
             <header>
-                <nav className="fixed bg-[#444444] bg-opacity-85 p-5 rounded-lg shadow-md shadow-gray-900 text-[#fbe7c2] top-8 left-1/2 transform -translate-x-1/2 w-11/12 h-[70px] z-[100] duration-300">
+                <nav className="fixed bg-[#444444] bg-opacity-90 p-5 rounded-lg shadow-md shadow-gray-900 text-[#fbe7c2] top-8 left-1/2 transform -translate-x-1/2 w-11/12 h-[70px] z-[100] duration-300">
                     {/* desktop */}
                     <div className="max-w-[1570px] mx-auto sm:flex hidden justify-between items-center ">
                         <div className="icon">
@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
 
 
                 </nav>
-                <div className={`mobileMenu ${open ? "menu-open z-50 shadow-lg shadow-gray-900" : ""}`}>
+                <div className={`mobileMenu ${open ? "menu-open z-50 shadow-lg shadow-gray-900 h-full fixed " : ""}`}>
                     <ul className="">
                         {menuItems.map((item, index) => {
                             const isActive = currentpathname === item.link;
