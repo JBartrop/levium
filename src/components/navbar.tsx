@@ -54,9 +54,9 @@ const Navbar: React.FC = () => {
     return (
         <section>
             <header>
-                <nav className="fixed bg-[#444444] bg-opacity-80 p-5 rounded-lg shadow-md shadow-gray-900 text-[#b0b0b0] top-8 left-1/2 transform -translate-x-1/2 w-11/12 h-[70px] z-[100] duration-300">
+                <nav className="fixed bg-[#444444] bg-opacity-85 p-5 rounded-lg shadow-md shadow-gray-900 text-[#fbe7c2] top-8 left-1/2 transform -translate-x-1/2 w-11/12 h-[70px] z-[100] duration-300">
                     {/* desktop */}
-                    <div className="max-w-[1570px] mx-auto lg:flex hidden justify-between items-center ">
+                    <div className="max-w-[1570px] mx-auto sm:flex hidden justify-between items-center ">
                         <div className="icon">
                             <p className="text-xl">Levium</p>
                         </div>
@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
                                 {menuItems.map((item, index) => {
                                     const isActive = currentpathname === item.link;
                                     return(
-                                        <li key={item.id} className={`ml-5 duration-300 hover:text-gray-300 ${isActive  ? " text-gray-200 font-bold" : "text-background-700"}`}>
+                                        <li key={item.id} className={`ml-5 duration-300 hover:text-[#b0b0b0] ${isActive  ? " text-[#fbe8d2] font-bold" : "text-background-700"}`}>
                                             <Link to={item.link}>
                                                 {item.name}
                                             </Link>
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
                     </div>
                     
                     {/* mobile */}
-                    <div className=" mx-auto lg:hidden flex justify-between relative items-center "> 
+                    <div className=" mx-auto sm:hidden flex justify-between relative items-center "> 
                         <div className="icon">
                             <p className="text-xl">Levium</p>
                         </div>
@@ -91,12 +91,12 @@ const Navbar: React.FC = () => {
 
 
                 </nav>
-                <div className={`mobileMenu ${open ? "menu-open" : ""}`}>
+                <div className={`mobileMenu ${open ? "menu-open z-50 shadow-lg shadow-gray-900" : ""}`}>
                     <ul className="">
                         {menuItems.map((item, index) => {
                             const isActive = currentpathname === item.link;
                             return(
-                                <li key={item.id} className={`m-5 text-left hover:text-gray-300 duration-300 ${isActive  ? " text-gray-200 font-bold" : "text-background-700"}`}>
+                                <li key={item.id} className={`m-5 text-left hover:text-[#b0b0b0] duration-300 ${isActive  ? " text-[#fbe8d2] font-bold" : "text-background-700"}`}>
                                     <Link to={item.link}>
                                         {item.name}
                                     </Link>
