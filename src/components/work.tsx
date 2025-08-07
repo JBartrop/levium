@@ -51,7 +51,7 @@ const Work: React.FC = () => {
               <img src={"images/image3.jpg"} className="w-full h-full rounded-r-md max-[640px]:rounded-xl" />
             </div>
             <div className="rightside px-3 md:px-10 lg:px-15 sm:w-1/2 w-full max-[640px]:mt-4">
-                <h1 className="mb-2 text-xl font-bold text-start">How We Work</h1>
+                <h1 className="text-[#fbe7c2] text-2xl font-bold mb-3 text-start">How We Work</h1>
                 {Faqs.map((faq) => {
                     const isOpen = openId === faq.id;
                     return(
