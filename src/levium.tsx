@@ -6,6 +6,7 @@ import About from "./components/about";
 import Gallery from "./components/gallery";
 import Work from "./components/work";
 import Testimonials from "./components/testimonial";
+import ContactUs from "./components/contactus";
 
 
 
@@ -15,12 +16,12 @@ const Levium: React.FC = () => {
 
     return (
         <section>
-            <Navbar />
             <Hero />
             <About />
             <Gallery />
             <Work />
             <Testimonials />
+            <ContactUs />
         </section>
     )
 }

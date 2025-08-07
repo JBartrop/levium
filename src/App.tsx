@@ -6,12 +6,19 @@ import './App.css';
 import Navbar from './components/navbar';
 import Levium from './levium';
 import Error from './pages/error';
+import MainLayout from './layout/main';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Levium />,
-    errorElement: <Error />  
+    element: <MainLayout />,
+    errorElement: <Error />, 
+    children: [
+      {
+        path: "/",
+        element: <Levium />,
+      },
+    ]
   },
   {
     path: "*",

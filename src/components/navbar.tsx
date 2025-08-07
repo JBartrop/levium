@@ -24,7 +24,7 @@ const menuItems: NavbarProps[] = [
     {
         id: 3,
         name: "Our Projects",
-        link: "/about"
+        link: "/projects"
     },
     {
         id: 4,
