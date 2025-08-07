@@ -7,6 +7,10 @@ import Navbar from './components/navbar';
 import Levium from './levium';
 import Error from './pages/error';
 import MainLayout from './layout/main';
+import AboutPage from './pages/aboutpage';
+import ProjectPage from './pages/projectspage';
+import WorkPage from './pages/workpage';
+import ContactPage from './pages/contactpage';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +21,22 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Levium />,
+      },
+      {
+        path: "about",
+        element: <AboutPage />,
+      },
+      {
+        path: "projects",
+        element: <ProjectPage />,
+      },
+      {
+        path: "workprocess",
+        element: <WorkPage />,
+      },
+      {
+        path: "contact",
+        element: <ContactPage />,
       },
     ]
   },

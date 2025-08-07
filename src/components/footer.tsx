@@ -7,7 +7,6 @@ import { BsTelegram } from "react-icons/bs";
 const Footer: React.FC = () => {
 
     const getDate = new Date().getFullYear();
-    console.log(getDate);
 
 
     return (

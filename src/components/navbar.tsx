@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
 
     const location = useLocation();
     const currentpathname = location.pathname
-    console.log(currentpathname)
+    // console.log(currentpathname)
 
     const [open, isOpen] = useState(false);
 
