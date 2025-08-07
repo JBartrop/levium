@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
 
 
     return (
-        <section className="my-14 md:my-16 text-left lg:my-20 flex sm:items-center justify-between  max-[640px]:flex-col mx-4">
+        <section className="mt-14 md:mt-16 text-left lg:mt-20 mb-5 flex sm:items-center justify-between  max-[640px]:flex-col mx-4">
             <div className="text-left my-5">
                 <div>
                     <ul className="sm:flex  text-[#fbe7c2] text-sm  ">
