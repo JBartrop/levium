@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
                             const isActive = currentpathname === item.link;
                             return(
                                 <li key={item.id} className={`m-5 text-left hover:text-[#b0b0b0] duration-300 ${isActive  ? " text-[#fbe8d2] font-bold" : "text-background-700"}`}>
-                                    <Link to={item.link}>
+                                    <Link to={item.link} onClick={toggleopen}>
                                         {item.name}
                                     </Link>
                                 </li>

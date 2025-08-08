@@ -1,10 +1,12 @@
 import React from "react";
 import { BsClock } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import ScrollRevealSection from "../components/revealSection";
 
 
 const AboutPage: React.FC = () => {
     return (
+        <ScrollRevealSection>
         <section className="aboutlevium overflow-hidden">
             <div className=" header lg:py-48 py-36 md:px-20 px-7 relative overflow-hidden">
                 <div className="absolute inset-0 z-minus before:content-[''] before:absolute before:inset-0 before:bg-[#262933] before:backdrop-opacity-50 before:z-minus">
@@ -50,6 +52,7 @@ const AboutPage: React.FC = () => {
             </div>
             
         </section>
+        </ScrollRevealSection>
     )
 }
 
