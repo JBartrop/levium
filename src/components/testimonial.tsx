@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import ScrollRevealSection from "./revealSection";
 
 interface TestimonyProps {
     testimonial: string;
@@ -73,6 +74,7 @@ const Testimonials: React.FC = () => {
 
 
     return (
+        <ScrollRevealSection>
         <section className="my-14 md:m-16 lg:my-0 m-4">
             <h1 className="text-[#fbe7c2] text-2xl font-bold mb-8">What Our Clients Say</h1>
             <Carousel 
@@ -98,6 +100,7 @@ const Testimonials: React.FC = () => {
                 
             </Carousel>
         </section>
+        </ScrollRevealSection>
     )
 }
 

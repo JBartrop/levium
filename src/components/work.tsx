@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from "react";
+import ScrollRevealSection from "./revealSection";
 
 
 interface FaqProps{
@@ -46,6 +47,7 @@ const Work: React.FC = () => {
   };
 
     return (
+        <ScrollRevealSection>
         <section className="my-14 md:my-16 lg:my-20 flex items-center justify-between  max-[640px]:flex-col mx-10">
             <div className="leftside sm:w-1/2 w-full">
               <img src={"images/image3.jpg"} className="w-full h-full rounded-r-md max-[640px]:rounded-xl" />
@@ -72,6 +74,7 @@ const Work: React.FC = () => {
                 })}
             </div>
         </section>
+        </ScrollRevealSection>
     )
 }
 

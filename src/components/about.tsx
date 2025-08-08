@@ -1,8 +1,10 @@
 import React from "react";
+import ScrollRevealSection from "./revealSection";
 
 
 const About: React.FC = () => {
     return (
+        <ScrollRevealSection>
         <section className="flex max-[640px]:p-4 flex-col-reverse sm:flex-row text-start my-10 sm:my-15 lg:my-20 justify-between items-center">
             <div className="leftside sm:w-1/2 w-full">
               <img src={"images/image10.jpg"} className="w-full h-full rounded-r-md max-[640px]:rounded-md" />
@@ -15,6 +17,7 @@ const About: React.FC = () => {
             </div>
             
         </section>
+        </ScrollRevealSection>
     )
 }
 

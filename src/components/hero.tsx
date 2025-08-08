@@ -1,9 +1,11 @@
 import React from "react";
+import ScrollRevealSection from "./revealSection";
 
 
 
 const Hero: React.FC = () => {
     return(
+        <ScrollRevealSection>
         <section className="flex sm:h-screen justify-between items-center max-[640px]:flex-col">
             <div className="leftside relative w-full sm:w-1/2 h-screen sm:h-auto  sm:p-10">
                 <img  src={"images/image1.jpeg"} alt="Background" className="absolute inset-0 w-full h-full object-cover sm:static sm:hidden" />
@@ -18,6 +20,7 @@ const Hero: React.FC = () => {
                 <img src={"images/image1.jpeg"} className="inset-0 w-full h-full object-cover  " />  
             </div>
         </section>
+        </ScrollRevealSection>
     )
 }
 

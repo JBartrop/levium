@@ -1,20 +1,10 @@
+import React from "react";
 
-'use client'
-import React, { useEffect, useState } from 'react'
 
 
 const Loader: React.FC = () => {
 
-    const [Loading, setLoading] = useState<boolean>(true);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 2000);
-        return () => clearTimeout(timer);
-    })
-
-    if (!Loading) return null;
 
 
     return (

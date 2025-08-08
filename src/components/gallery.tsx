@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollRevealSection from "./revealSection";
 
 interface imageProps{
     image:string;
@@ -31,19 +32,12 @@ const imageFiles : imageProps[] = [
         id: "6",
         image: "images/image5.avif"
     },
-    // {
-    //     id: "7",
-    //     image: "images/image3.jpg"
-    // },
-    // {
-    //     id: "1",
-    //     image: "images/image4.jpg"
-    // },
 ]
 
 
 const Gallery: React.FC = () => {
     return (
+        <ScrollRevealSection>
         <section className="my-14 md:my-16 lg:my-20 mx-4">
             <h1 className=" text-[#fbe7c2] text-2xl font-bold mb-3">Project Gallery</h1>
             <div className="m-container overflow-hidden grid col-span-3 grid-cols-3 gap-2">
@@ -55,6 +49,7 @@ const Gallery: React.FC = () => {
                 
             </div>
         </section>
+        </ScrollRevealSection>
     )
 }
 
