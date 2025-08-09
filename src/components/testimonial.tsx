@@ -33,37 +33,37 @@ const responsive = {
 const testimonial: TestimonyProps[] = [
      {
     testimonial: "Levium transformed our empty space into a warm, inviting home. The custom woodwork was not only beautiful but incredibly functional.",
-    person: "Sarah L. – Residential Client",
+    person: "Sarah L. Residential",
     date: "June 2025",
   },
   {
     testimonial: "We hired Levium for our office interior, and their attention to detail in wood paneling and shelving was unmatched. Professional from start to finish.",
-    person: "Mark R. – CEO, RidgeTech",
+    person: "Mark R. CEO",
     date: "May 2025",
   },
   {
     testimonial: "From concept to installation, Levium handled everything flawlessly. The oak cabinetry in our kitchen is the centerpiece of our home now.",
-    person: "Amira H. – Homeowner",
+    person: "Amira H. Homeowner",
     date: "April 2025",
   },
   {
     testimonial: "We wanted a minimalist interior with custom wood features, and Levium delivered beyond expectations. The craftsmanship is top-tier.",
-    person: "Luis T. – Architect",
+    person: "Luis T. Architect",
     date: "March 2025",
   },
   {
     testimonial: "Levium’s team was a dream to work with. They blended Scandinavian wood designs with our vision perfectly. Highly recommended!",
-    person: "Janet D. – Interior Designer",
+    person: "Janet D. Designer",
     date: "February 2025",
   },
   {
     testimonial: "The custom bookshelves and desk they built for my study are both beautiful and practical. It truly feels like a personalized space now.",
-    person: "Ken W. – Writer",
+    person: "Ken W. Writer",
     date: "January 2025",
   },
   {
     testimonial: "Our retail store now has a stunning walnut interior thanks to Levium. Customers constantly compliment the wooden design work!",
-    person: "Celia M. – Store Owner",
+    person: "Celia M. StoreOwner",
     date: "December 2024",
   }
 ]
