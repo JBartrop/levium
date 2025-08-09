@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
                     {/* desktop */}
                     <div className="max-w-[1570px] mx-auto sm:flex hidden justify-between items-center ">
                         <div className="icon">
-                            <p className="text-xl">Levium</p>
+                           <p className="text-xl"><a href="/">Levium</a></p>
                         </div>
                         <div>
                             <ul className="flex items-center">
@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
                     {/* mobile */}
                     <div className=" mx-auto sm:hidden flex justify-between relative items-center "> 
                         <div className="icon">
-                            <p className="text-xl">Levium</p>
+                            <p className="text-xl"><a href="/">Levium</a></p>
                         </div>
                         <button onClick={toggleopen}  className="hamburger relative inline-flex justify-center items-center  outline-offset-2 h-6 w-8 text-[#9d978b]">
                             <span className={`menu ${open ? "open" : ""}`}></span>

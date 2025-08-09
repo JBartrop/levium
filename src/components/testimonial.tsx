@@ -3,6 +3,14 @@ import React, { useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ScrollRevealSection from "./revealSection";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y, Mousewheel, Keyboard } from "swiper/modules";
+import "swiper/css";
+// import "swiper/css/bundle";
+// import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 interface TestimonyProps {
     testimonial: string;
@@ -11,21 +19,25 @@ interface TestimonyProps {
 }
 
 const responsive = {
-  superLargeDesktop: {
+  // superlargedesktop
+  3000: {
     breakpoint: { max: 4000, min: 3000 },
-    items: 5
+    slidesPerView: 5
   },
-  desktop: {
+  // desktop
+  1024: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3
+    slidesPerView: 3
   },
-  tablet: {
+  // tablet
+  640: {
     breakpoint: { max: 1024, min: 640 },
-    items: 2
+    slidesPerView: 2
   },
-  mobile: {
+  //mobile
+  0: {
     breakpoint: { max: 640, min: 0 },
-    items: 1
+    slidesPerView: 1
   }
 };
 
@@ -71,13 +83,46 @@ const testimonial: TestimonyProps[] = [
 
 const Testimonials: React.FC = () => {
 
+  const swiper = useSwiper();
+
 
 
     return (
         <ScrollRevealSection>
         <section className="my-14 md:m-16 lg:my-0 m-4">
             <h1 className="text-[#fbe7c2] text-2xl font-bold mb-8">What Our Clients Say</h1>
-            <Carousel 
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y, Mousewheel, Keyboard]}
+              grabCursor
+              // centeredSlides
+              breakpoints={responsive}
+              speed={600}
+              effect="overflow"
+              loop
+              mousewheel
+              pagination={{clickable: true}}
+              scrollbar={{ draggable: true }}
+              navigation={{
+                 nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+              }}
+             >
+              {testimonial.map((testimony) => (
+                <SwiperSlide>
+                  <div className="bg-[#444444] h-[200px] text-[#fbe7c2] p-5 w-11/12 m-auto mb-8 flex flex-col  justify-between rounded-md" key={testimony.person}>
+                    <p className="text-left mb-1 ">{testimony.testimonial}</p>
+                    <div className="flex justify-between text-sm opacity-80">
+                        <p>{testimony.person}</p>
+                        <p>{testimony.date}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+              <button className="swiper-button-next absolute right-0 top-20 z-10 bg-[#555555] p-2 rounded-full" onClick={() => swiper?.slideNext()}> <FaArrowRight size={20} /></button>
+              <button className="swiper-button-prev absolute left-0 top-20 z-10 bg-[#555555] p-2 rounded-full" onClick={() => swiper?.slidePrev()}> <FaArrowLeft size={20} /> </button>
+              
+            </Swiper>
+            {/* <Carousel 
                 responsive={responsive}
                 swipeable={true}
                 draggable={true}
@@ -98,7 +143,7 @@ const Testimonials: React.FC = () => {
                     </div>
                 ))}
                 
-            </Carousel>
+            </Carousel> */}
         </section>
         </ScrollRevealSection>
     )

@@ -24,7 +24,7 @@ const ScrollRevealSection = ({
       id={id}
       ref={ref}
       className={className}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >

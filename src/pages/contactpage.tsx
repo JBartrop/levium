@@ -64,7 +64,7 @@ const ContactPage: React.FC = () => {
             <div className="leftside sm:w-1/2 w-full">
               <img src={"images/image4.jpg"} className="w-full h-[80vh] rounded-r-md hidden sm:block" />
             </div>
-            <div className="rightside h-auto sm:h-[80vh] sm:ml-2 sm:bg-[#444444] text-start p-3 md:p-10 lg:p-15 sm:w-1/2 w-full max-[640px]:mt-4">
+            <div className="rightside h-auto flex items-center sm:h-[80vh] sm:ml-2 sm:bg-[#444444] text-start p-3 md:p-10 lg:p-15 sm:w-1/2 w-full max-[640px]:mt-4">
             <div>
                 <h1 className="text-[#fbe7c2] text-4xl font-semibold mb-2">Contact us</h1>
                 <p>Interested in placing an order or have a question? <br />
