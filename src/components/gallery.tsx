@@ -40,7 +40,7 @@ const Gallery: React.FC = () => {
         <ScrollRevealSection>
         <section className="my-14 md:my-16 lg:my-20 mx-4">
             <h1 className=" text-[#fbe7c2] text-2xl font-bold mb-3">Project Gallery</h1>
-            <div className="m-container overflow-hidden grid col-span-3 grid-cols-3 gap-2">
+            <div className="m-container overflow-hidden grid sm:col-span-3 sm:grid-cols-3 col-span-2 grid-cols-2 gap-2">
                 {imageFiles.map((img) => (
                     <div className="m-item inline-block w-full mt-2" key={img.id}>
                         <img src={img.image} className="image min-w-full lg:p-5" />
