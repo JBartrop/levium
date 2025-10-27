@@ -21,7 +21,8 @@ code {
 
 .mobileMenu {
   overflow:hidden;
-  position: absolute;
+  position: fixed;
+  inset: inherit;
   top: 0;
   right: 0;
   background: #555555;
