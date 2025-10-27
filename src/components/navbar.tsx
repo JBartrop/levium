@@ -1,5 +1,5 @@
 "use client"
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigation } from "react-router-dom";
 
 interface NavbarProps{
@@ -47,9 +47,42 @@ const Navbar: React.FC = () => {
 
     const [open, isOpen] = useState(false);
 
+    const mobileMenuRef = useRef<HTMLDivElement>(null);
+    const hamburgerRef = useRef<HTMLButtonElement>(null);
+
     const toggleopen = () => {
         isOpen(!open)
     }
+
+    
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                open &&
+                mobileMenuRef.current && 
+                !mobileMenuRef.current.contains(event.target as Node) &&
+                hamburgerRef.current &&
+                !hamburgerRef.current.contains(event.target as Node)
+            ) {
+                isOpen(false);
+            }
+        };
+
+        
+        if (open) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [open]);
+
+    
+    useEffect(() => {
+        isOpen(false);
+    }, [currentpathname]);
 
     return (
         <section>
@@ -81,7 +114,7 @@ const Navbar: React.FC = () => {
                         <div className="icon">
                             <p className="text-xl"><a href="/">Levium</a></p>
                         </div>
-                        <button onClick={toggleopen}  className="hamburger relative inline-flex justify-center items-center  outline-offset-2 h-6 w-8 text-[#9d978b]">
+                        <button ref={hamburgerRef} onClick={toggleopen}  className="hamburger relative inline-flex justify-center items-center  outline-offset-2 h-6 w-8 text-[#9d978b]">
                             <span className={`menu ${open ? "open" : ""}`}></span>
                             <span className={`menu ${open ? "open" : ""}`}></span>
                             <span className={`menu ${open ? "open" : ""}`}></span>
@@ -91,7 +124,7 @@ const Navbar: React.FC = () => {
 
 
                 </nav>
-                <div className={`mobileMenu ${open ? "menu-open z-50 shadow-lg shadow-gray-900 h-full fixed " : ""}`}>
+                <div ref={mobileMenuRef} className={`mobileMenu ${open ? "menu-open z-50 shadow-lg shadow-gray-900 h-screen fixed " : ""}`}>
                     <ul className="">
                         {menuItems.map((item, index) => {
                             const isActive = currentpathname === item.link;

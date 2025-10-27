@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Loader from '../components/loader';
+import ScrollToTop from '../components/scrollToTop';
 
 
 const MainLayout: React.FC = () => {
@@ -19,6 +20,7 @@ const MainLayout: React.FC = () => {
     if (Loading) return <Loader />;
     return (
         <section>
+            <ScrollToTop />
             <Navbar />
             <main>
                 <Outlet />
