@@ -68,14 +68,22 @@ const Navbar: React.FC = () => {
             }
         };
 
+        const handleScroll = () => {
+            if (open) {
+                isOpen(false);
+            }
+        };
+
         
         if (open) {
             document.addEventListener('mousedown', handleClickOutside);
+            document.addEventListener('scroll', handleScroll);
         }
 
         
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('scroll', handleScroll);
         };
     }, [open]);
 
@@ -124,7 +132,7 @@ const Navbar: React.FC = () => {
 
 
                 </nav>
-                <div ref={mobileMenuRef} className={`mobileMenu ${open ? "menu-open z-50 shadow-lg shadow-gray-900 h-screen fixed " : ""}`}>
+                <div ref={mobileMenuRef} className={`mobileMenu ${open ? "menu-open z-50 shadow-lg shadow-gray-900 fixed " : ""}`}>
                     <ul className="">
                         {menuItems.map((item, index) => {
                             const isActive = currentpathname === item.link;
