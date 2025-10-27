@@ -60,11 +60,11 @@ const ContactPage: React.FC = () => {
                     <h2 className="text-[#fbe7c2] text-4xl font-bold mb-8">Levium Contact Us</h2>
                 </div>
             </div>
-        <div className="mt-14 md:mt-16 lg:mt-20 flex items-center justify-between  max-[640px]:flex-col mx-10">
+        <div className="mt-14 md:mt-16 lg:mt-20 flex items-stretch justify-between max-[640px]:flex-col mx-10 min-h-[500px]">
             <div className="leftside sm:w-1/2 w-full">
-              <img src={"images/image4.jpg"} className="w-full h-[80vh] rounded-r-md hidden sm:block" />
+              <img src={"images/image4.jpg"} className="w-full h-full rounded-r-md hidden sm:block" />
             </div>
-            <div className="rightside h-auto flex items-center sm:h-[80vh] sm:ml-2 sm:bg-[#444444] text-start p-3 md:p-10 lg:p-15 sm:w-1/2 w-full max-[640px]:mt-4">
+            <div className="rightside h-auto sm:h-auto flex items-center sm:ml-2 sm:bg-[#444444] text-start p-3 md:p-10 lg:p-15 sm:w-1/2 w-full max-[640px]:mt-4">
             <div>
                 <h1 className="text-[#fbe7c2] text-4xl font-semibold mb-2">Contact us</h1>
                 <p>Interested in placing an order or have a question? <br />
